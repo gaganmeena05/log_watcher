@@ -24,7 +24,7 @@
 
     <script>
         const logContainer = document.getElementById('log-container');
-        const socket = new WebSocket('ws://localhost:8000/ws/fetch_logs/');
+        const socket = new WebSocket('ws://0.0.0.0:8000/ws/fetch_logs/');
     
         socket.onopen = function() {
             console.log('WebSocket connection established');
