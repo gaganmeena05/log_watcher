@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-x8oycsx5hp2do7ggt00@p0p-0!be@%$+39#-@$leg=-mdekrn3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["log-watcher.onrender.com"]
 
 
 # Application definition
