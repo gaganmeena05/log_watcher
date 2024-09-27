@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Watcher</title>
+    <style>
+        #log-container {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            width: 80%;
+            height: 500px;
+            overflow-y: auto;
+            margin: 0 auto;
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Log Watcher</h1>
+    <div id="log-container"></div>
+
+    <script>
+        const logContainer = document.getElementById('log-container');
+        const socket = new WebSocket('ws://localhost:8000/ws/fetch_logs/');
+    
+        socket.onopen = function() {
+            console.log('WebSocket connection established');
+        };
+    
+        socket.onmessage = function(event) {
+            logContainer.innerHTML = event.data;
+            logContainer.scrollTop = logContainer.scrollHeight;
+        };
+    
+        socket.onclose = function(event) {
+            console.error('WebSocket closed unexpectedly');
+        };
+    </script>
+</body>
+</html>
