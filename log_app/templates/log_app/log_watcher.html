@@ -25,7 +25,7 @@
     <script>
         const logContainer = document.getElementById('log-container');
         {% comment %} const socket = new WebSocket('ws://localhost:8000/ws/fetch_logs/'); {% endcomment %}
-        const socket = new WebSocket('wss://0.0.0.0:8000/ws/fetch_logs/');
+        const socket = new WebSocket('wss://log-watcher.onrender.com/ws/fetch_logs/');
     
         socket.onopen = function() {
             console.log('WebSocket connection established');
